@@ -7,6 +7,7 @@ public class StringEx {
 		stringFormat();
 
 	}
+	
 	public static void stringFormat() {
 		// 포맷 문자
 		// %d (10진) , %s (문자열), %f (실수), %n (개행), %% (%)
