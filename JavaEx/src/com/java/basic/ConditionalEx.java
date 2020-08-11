@@ -18,6 +18,24 @@ public class ConditionalEx {
 		//continueEx();
 		breakEx();
 	}
+    // 8월 11일
+    public static void randomEx() {
+       // 복수번의 랜덤 (1~6)을 뽑아서 합산
+       int rollCnt = 6; // 횟수
+       int  total = 0;
+       
+       // 횟수를 알 수 없을 때 while 문
+       // 횟수를 알 수 있을 때 for 문
+       
+       for(int i=1; i<=rollCnt; i++) {
+          // 랜덤으로 주사위 값을 추출
+          int num = (int)(Math.random() * 6) +1;
+          System.out.println(i + "번째 주사위 : " + num);
+          total += num;
+       }
+       System.out.println("주사위 총합 : " + total);
+    }
+
 	public static void breakEx() {
 		// 1부터 루프를 돌려서 6과 14로 모두 나누어 떨어지는 수는 얼마인가?
 		// 어디까지 루프를 돌려야 할 지 예측이 쉽지 않음
