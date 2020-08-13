@@ -1,5 +1,7 @@
 package com.java.oop.goods.v1;
 
+//v3
+//생성자 연습
 public class GoodApp {
 
 	public static void main(String[] args) {

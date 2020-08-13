@@ -1,12 +1,24 @@
-package com.java.oop.point.v1;
+package com.java.oop.point.v2;
 
-
+// v2
+// 기본생성자 연습
 
 public class Point {
 	// 필드
 	private int x;
 	private int y;
 	
+	// 사용자 정의 생성자가 있을 경우
+	// JVM은 기본 생성자를 만들지 않는다
+	public Point() {
+		
+		
+	}
+	// 사용자 정의 생성자
+	public Point(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
 	
 	public int getX() {
 		return x;
