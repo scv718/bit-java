@@ -1,6 +1,6 @@
 package com.java.oop.shape.v1;
 
-public class Rectangle extends Shape implements Drawable{
+public class Rectangle extends Shape{
 	// x, y필드 draw, area 메서드 상속
 	
 	protected int width;
