@@ -1,5 +1,6 @@
 package com.java.exception;
 
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -10,10 +11,29 @@ public class ExceptionEx {
 	public static void main(String[] args) {
 		//arithmeticExceptionEx();
 		//indexOutofBoundEx();
-		nullPointerExceptionEx();
+		//nullPointerExceptionEx();
+		customExceptionEx();
 
 	}
 	
+	private static void customExceptionEx() {
+		// 사용자 정의 예외의 활용
+		ThrowExcept ex = new ThrowExcept();
+		try {
+			ex.executeCheckedException();  // 체크드 익셉션 발생
+			ex.executeUncheckedException(); // 언체크드 익셉션 발생
+			System.out.println("10/0 = " + ex.divide(10,0));
+		} catch(IOException e) {
+			System.err.println("예외 메세지: " + e.getMessage());
+		} catch(CustomArithmeticException e) {
+			// 본 예외는 RuntimeException의 자손이므로 
+			// RuntimeException 보다 위에서 catch 해 줘야 한다.
+			System.err.println("사용자 정의 예외 메세지: "+ e.getMessage());
+			System.err.printf("예외 상황 발생시 num 1 = %d, num 2 = %d%n", e.getNum1(), e.getNum2());
+		} catch(RuntimeException e) {
+			System.err.println("런타임 예외 메세지:" +e.getMessage());
+		} 
+	}
 	// 가장 흔히 발생하는 예외
 	private static void nullPointerExceptionEx() {
 		String s = "Hello"; // 참조 객체
