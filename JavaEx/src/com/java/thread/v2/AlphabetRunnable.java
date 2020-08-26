@@ -1,0 +1,23 @@
+package com.java.thread.v2;
+
+// Thread 생성 두번째 방법: Runnable 인터페이스 구현
+public class AlphabetRunnable implements Runnable{
+
+	@Override
+	public void run() {
+		// Thread 내부의 start 메서드에서 호출될 쓰레드의 로직
+		
+		for (char ch = 'A'; ch<= 'Z'; ++ch) {
+			System.out.println("AlphabetRunnable: " +ch);
+			// 0.3초 대기
+			
+			try {
+			Thread.sleep(300);
+			} catch(InterruptedException e) { // Thread의 관련된 예외처리는 InterruptedException 
+				e.printStackTrace();
+			}
+		}
+		
+	}
+
+}
